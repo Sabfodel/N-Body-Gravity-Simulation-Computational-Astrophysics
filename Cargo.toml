@@ -1,0 +1,21 @@
+[package]
+name = "nbody-sim"
+version = "0.1.0"
+edition = "2021"
+authors = ["Sabri Aydın"]
+description = "N-body gravitational simulation with RK4 integration and Rayon-parallel force computation"
+license = "MIT"
+repository = "https://github.com/Sabfodel/N-Body-Gravity-Simulation-Computational-Astrophysics"
+
+[dependencies]
+nalgebra = "0.32"
+rayon = "1.8"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+plotters = { version = "0.3", default-features = false, features = ["svg_backend", "line_series"] }
+
+[dev-dependencies]
+approx = "0.5"
+
+[profile.release]
+lto = true
